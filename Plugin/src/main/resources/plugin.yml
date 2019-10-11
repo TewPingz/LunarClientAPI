@@ -1,0 +1,10 @@
+name: LunarClientAPI
+main: net.mineaus.lunar.LunarClientPlugin
+version: ${git.commit.id.abbrev}
+commands:
+    lunarclient:
+        aliases: [lc, lunar]
+        description: Lists who is on Lunar Client.
+    emote:
+        aliases: [e]
+        description: Display an emote on a player.

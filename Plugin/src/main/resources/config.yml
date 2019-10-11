@@ -1,0 +1,23 @@
+kick-player:
+  enabled: true
+  message: "&cLunar Client is required to play on HYS %SPACER% &cDownload at &olunar.gg/client"
+player:
+  authenticate-message:
+    enable: true
+    message: "&aYou have been authenticated with Lunar Client."
+  authenticate-notification:
+    enable: true
+    level: NEUTRAL
+    delay: 5
+    message: "You have been Lunar Client authenticated."
+  authenticate-title:
+    enable: true
+    message: "&6Welcome to HYS"
+    subtitle: true
+    duration: 1
+    fadeIn: 1
+    fadeOut: 1
+    size: 1
+server-name:
+  enabled: true
+  value: "HYS | Lobby"
