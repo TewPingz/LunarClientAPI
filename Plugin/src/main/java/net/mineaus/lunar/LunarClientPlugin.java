@@ -52,17 +52,18 @@ public class LunarClientPlugin extends JavaPlugin {
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "Lunar-Client");
         this.getServer().getMessenger().registerIncomingPluginChannel(this, "Lunar-Client", (channel, player, bytes) -> {
             if (bytes[0] == 26) {
-                User user = getApi().getUserManager().getPlayerData(player);
-                if (user != null && !user.isLunarClient()){
-                    user.setLunarClient(true);
-                    new AuthenticateEvent(player).call(this);
-                }
-
                 final UUID outcoming = BufferUtils.getUUIDFromBytes(Arrays.copyOfRange(bytes, 1, 30));
 
                 // To stop server wide spoofing.
                 if (!outcoming.equals(player.getUniqueId())) {
                     return;
+                }
+
+                User user = getApi().getUserManager().getPlayerData(player);
+
+                if (user != null && !user.isLunarClient()){
+                    user.setLunarClient(true);
+                    new AuthenticateEvent(player).call(this);
                 }
 
                 for (Player other : Bukkit.getOnlinePlayers()) {
