@@ -1,7 +1,3 @@
-<p align="center">
-    <img src="https://i.imgur.com/KBfKC1n.png" width="150" height="150"/>
-</p>
-
 ## LunarClientAPI
 
 The Lunar Client API will allow you to detect when a player is running Lunar Client, enable and disable HUD modules, allow x-ray for your staff, and much more.
@@ -22,7 +18,7 @@ If you find an issue you can submit it [here](https://github.com/skeltalgit/Luna
 
 1. Navigate to the repository home directory
 2. Run `mvn clean install`
-3. Find the compiled jar at `target/LunarClientAPI.jar`
+3. Find the compiled jars at `Plugin/target/LunarClient-Plugin-version.jar` and `API/target/LunarClient-API-version.jar`
 
 ## Contributing
 
