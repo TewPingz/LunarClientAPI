@@ -6,7 +6,7 @@ import net.mineaus.lunar.LunarClientPlugin;
 import net.mineaus.lunar.api.module.hologram.Hologram;
 import net.mineaus.lunar.api.module.hologram.HologramManager;
 import net.mineaus.lunar.listener.HologramListener;
-import net.mineaus.lunar.BufferUtils;
+import net.mineaus.lunar.utils.BufferUtils;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;

@@ -6,7 +6,7 @@ import net.mineaus.lunar.LunarClientPlugin;
 import net.mineaus.lunar.api.module.border.Border;
 import net.mineaus.lunar.api.module.border.BorderManager;
 import net.mineaus.lunar.listener.BorderListener;
-import net.mineaus.lunar.BufferUtils;
+import net.mineaus.lunar.utils.BufferUtils;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;

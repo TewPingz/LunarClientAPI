@@ -8,7 +8,7 @@ import net.mineaus.lunar.api.module.waypoint.WaypointManager;
 import net.mineaus.lunar.api.type.Minimap;
 import net.mineaus.lunar.api.type.ServerRule;
 import net.mineaus.lunar.listener.WaypointListener;
-import net.mineaus.lunar.BufferUtils;
+import net.mineaus.lunar.utils.BufferUtils;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 

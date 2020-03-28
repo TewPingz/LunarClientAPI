@@ -15,6 +15,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>io-netty</id>
+            <url>https://mvnrepository.com/artifact/io.netty/netty-all</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -28,6 +32,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.48.Final</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

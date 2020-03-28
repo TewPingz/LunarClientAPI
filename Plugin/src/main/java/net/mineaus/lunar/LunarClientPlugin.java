@@ -15,6 +15,7 @@ import net.mineaus.lunar.listener.PlayerListener;
 import net.mineaus.lunar.module.border.BorderManagerImplementation;
 import net.mineaus.lunar.module.hologram.HologramManagerImplementation;
 import net.mineaus.lunar.module.waypoint.WaypointManagerImplementation;
+import net.mineaus.lunar.utils.BufferUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;

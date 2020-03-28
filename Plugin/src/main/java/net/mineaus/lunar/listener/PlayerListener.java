@@ -5,13 +5,11 @@ import net.mineaus.lunar.api.event.impl.AuthenticateEvent;
 import net.mineaus.lunar.api.type.Notification;
 import net.mineaus.lunar.api.user.User;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -24,9 +22,9 @@ public class PlayerListener implements Listener {
     public PlayerListener(LunarClientPlugin plugin) {
         this.plugin = plugin;
     }
-    
+
     @EventHandler(priority = EventPriority.LOWEST)
-    public void onLowPlayerJoin(PlayerJoinEvent event) {
+    public void onPlayerJoin(PlayerJoinEvent event) {
         User data = new User(event.getPlayer().getUniqueId(), event.getPlayer().getName());
         LunarClientPlugin.getApi().getUserManager().setPlayerData(event.getPlayer().getUniqueId(), data);
 
@@ -40,19 +38,6 @@ public class PlayerListener implements Listener {
                 event.getPlayer().kickPlayer(ChatColor.RED + "An error occurred while loading your data.");
             }
         }, 40L);
-    }
-
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void onHighPlayerJoin(PlayerJoinEvent event) {
-        User data = this.plugin.getUserManager().getPlayerData(event.getPlayer().getUniqueId());
-
-        data.setChecking(true);
-        data.setLastGameMode(event.getPlayer().getGameMode());
-        data.setWasFlying(event.getPlayer().isFlying());
-        data.setWasAllowFlight(event.getPlayer().getAllowFlight());
-
-        event.getPlayer().setGameMode(GameMode.SURVIVAL);
-        event.getPlayer().setFallDistance(3.0001F);
     }
 
     @EventHandler
@@ -102,24 +87,6 @@ public class PlayerListener implements Listener {
                 );
             } catch (IOException e) {
                 // handle error
-            }
-        }
-    }
-
-    @EventHandler(priority = EventPriority.HIGHEST) //make it so it runs after every other plugin
-    public void onEntityDamage(EntityDamageEvent event){
-        if (event.getEntity() instanceof Player && event.getCause() == EntityDamageEvent.DamageCause.FALL){
-            Player player = (Player) event.getEntity();
-            User data = plugin.getUserManager().getPlayerData(player.getUniqueId());
-            if (data.isChecking()){
-                data.setChecking(false);
-
-                event.setDamage(0);
-                event.setCancelled(false);
-
-                player.setGameMode(data.getLastGameMode());
-                player.setAllowFlight(data.isWasAllowFlight());
-                player.setFlying(data.isWasFlying());
             }
         }
     }

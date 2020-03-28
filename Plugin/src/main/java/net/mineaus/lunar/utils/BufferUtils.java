@@ -1,4 +1,4 @@
-package net.mineaus.lunar;
+package net.mineaus.lunar.utils;
 
 import com.google.common.base.Charsets;
 

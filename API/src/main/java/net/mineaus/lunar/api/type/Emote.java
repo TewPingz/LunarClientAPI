@@ -11,7 +11,7 @@ public enum Emote {
     DAB(3),
     T_POSE(4),
     SHRUG(5),
-    FACEPALM(6);
+    FACEPALM(6); //probs should add new emotes if im assed, or change this system.
 
     private int emoteId;
 
